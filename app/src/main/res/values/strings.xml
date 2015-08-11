@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">PesquisaCarro</string>
+    
+    <string name="action_settings">Settings</string>
+    <string name="Login">Efetue seu login</string>
+    <string name="email">E-mail</string>
+    <string name="pass">Senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="cadastrar">Cadastre-se</string>
+    <string name="title_activity_listagem">Listagem</string>
+    <string name="controle">Controle de Frotas de Veículos</string>
+    <string name="sair">Sair</string>
+    <string name="versao">Versão 1.0</string>
+    <string name="user">Fulado de Tal</string>
+    <string name="veiculos">Veículos Cadastrados:</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="consultar">Consultar</string>
+
+    <string name="hello_world">Hello world!</string>
+</resources>

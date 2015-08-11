@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.marcelo.pesquisacarro.Listagem">
+    <item
+        android:id="@+id/user"
+        android:title="@string/user"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/sair"
+        android:title="@string/sair"
+        android:orderInCategory="100"
+        app:showAsAction="collapseActionView"
+        android:onClick="logout" />
+
+    <item
+        android:id="@+id/versao"
+        android:title="@string/versao"
+        android:orderInCategory="100"
+        app:showAsAction="collapseActionView" />
+</menu>
