@@ -15,6 +15,12 @@
     <string name="veiculos">Veículos Cadastrados:</string>
     <string name="adicionar">Adicionar</string>
     <string name="consultar">Consultar</string>
+    <string name="cadastrando">Cadastrar</string>
+    <string name="nusuario">Novo Usuário</string>
+    <string name="cadastrarprimeiro">Cadastre-se Primeiro</string>
+    <string name="usuariosenhaerrado">Usuário/Senha errados</string>
+    <string name="cadastradosucesso">Cadastrado com Sucesso</string>
+    <string name="emailinvalido">Email Inválido</string>
 
     <string name="hello_world">Hello world!</string>
 </resources>
