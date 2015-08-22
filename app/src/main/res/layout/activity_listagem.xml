@@ -20,17 +20,38 @@
             android:text="@string/controle"
             android:id="@+id/textView"/>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/veiculos"
-            android:id="@+id/textView2"
-            android:layout_marginTop="40dp"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/placa"/>
+            <TextView
+                android:gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/renavam"/>
+            <TextView
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/status"/>
+
+        </LinearLayout>
 
         <GridView
             android:layout_width="wrap_content"
             android:layout_height="300dp"
+            android:verticalScrollbarPosition="right"
+            android:scrollbars="vertical"
             android:id="@+id/gridView" />
 
         <LinearLayout

@@ -1,7 +1,5 @@
 package com.example.marcelo.pesquisacarro;
 
-import android.content.Context;
-import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
@@ -13,7 +11,7 @@ import java.io.ObjectOutputStream;
 /**
  * Created by marcelo on 22/08/15.
  */
-public  class Serealizar {
+public  class SerealizarUser {
 
     private static File file;
 
@@ -52,6 +50,6 @@ public  class Serealizar {
     }
 
     public static void setFile(File file) {
-        Serealizar.file = file;
+        SerealizarUser.file = file;
     }
 }

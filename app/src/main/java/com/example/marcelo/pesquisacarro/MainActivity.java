@@ -1,9 +1,7 @@
 package com.example.marcelo.pesquisacarro;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
-import android.location.GpsStatus;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,10 +12,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -31,12 +25,12 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         File file = new File(getFilesDir(),"pesquisa.dat");
-        Serealizar.setFile(file);
+        SerealizarUser.setFile(file);
 
         usuarioET = (EditText) findViewById(R.id.emailET);
         senhaET = (EditText) findViewById(R.id.senhaET);
 
-        this.user = Serealizar.loadUser();
+        this.user = SerealizarUser.loadUser();
         if (user != null && user.getIslogin()) {
             Intent intent = new Intent(this, Listagem.class);
             startActivity(intent);
@@ -53,14 +47,14 @@ public class MainActivity extends ActionBarActivity {
 
 
     public void logar(View view) {
-        user = Serealizar.loadUser();
+        user = SerealizarUser.loadUser();
         if (user == null) {
             Toast.makeText(MainActivity.this, R.string.cadastrarprimeiro, Toast.LENGTH_SHORT).show();
         }else{
             User usuarioInformado = new User(usuarioET.getText().toString(),senhaET.getText().toString());
             if(user.getUsuario().equals(usuarioInformado.getUsuario()) && user.getSenha().equals(usuarioInformado.getSenha()) ){
                 user.setIslogin(true);
-                Serealizar.saveUser(user);
+                SerealizarUser.saveUser(user);
                 Intent intent = new Intent(this, Listagem.class);
                 startActivity(intent);
             }else{
@@ -88,7 +82,7 @@ public class MainActivity extends ActionBarActivity {
                 emailCad.setError(getText(R.string.emailinvalido));
             }else{
                 User user = new User(emailCad.getText().toString(),senhaCad.getText().toString());
-                Serealizar.saveUser(user);
+                SerealizarUser.saveUser(user);
                 dialog.dismiss();
                 Toast.makeText(MainActivity.this, R.string.cadastradosucesso, Toast.LENGTH_SHORT).show();
             }

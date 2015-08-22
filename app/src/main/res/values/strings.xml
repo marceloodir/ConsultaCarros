@@ -9,8 +9,9 @@
     <string name="cadastrar">Cadastre-se</string>
     <string name="title_activity_listagem">Listagem</string>
     <string name="controle">Controle de Frotas de Veículos</string>
-    <string name="sair">Sair</string>
-    <string name="versao">Versão 1.0</string>
+    <string name="sair">Logout</string>
+    <string name="sobre">Sobre</string>
+    <string name="sobreconteudo">Pesquisa Detran/RN 1.0</string>
     <string name="user">Fulado de Tal</string>
     <string name="veiculos">Veículos Cadastrados:</string>
     <string name="adicionar">Adicionar</string>
@@ -21,6 +22,15 @@
     <string name="usuariosenhaerrado">Usuário/Senha errados</string>
     <string name="cadastradosucesso">Cadastrado com Sucesso</string>
     <string name="emailinvalido">Email Inválido</string>
+    <string name="placa">Placa</string>
+    <string name="renavam">Renavam</string>
+    <string name="nveiculo">Novo Veículo</string>
+    <string name="ncheck">N/A</string>
+    <string name="okcheck">OK</string>
+    <string name="nokcheck">X</string>
+    <string name="apagarveiculo">Apagar Placa: </string>
+    <string name="apagarmessagem">Deseja apagar esse veículo?</string>
+    <string name="status">Status</string>
 
     <string name="hello_world">Hello world!</string>
 </resources>

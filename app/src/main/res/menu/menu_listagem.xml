@@ -17,7 +17,8 @@
 
     <item
         android:id="@+id/versao"
-        android:title="@string/versao"
+        android:title="@string/sobre"
         android:orderInCategory="100"
-        app:showAsAction="collapseActionView" />
+        app:showAsAction="collapseActionView"
+        android:onClick="sobre"/>
 </menu>
