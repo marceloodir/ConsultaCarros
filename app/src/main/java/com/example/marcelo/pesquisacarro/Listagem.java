@@ -25,7 +25,9 @@ public class Listagem extends ActionBarActivity {
 
 
     public void logout(MenuItem item) {
-
+        Serealizar.removeUser();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     public void adicionar(View view) {

@@ -22,7 +22,6 @@ import java.io.ObjectOutputStream;
 
 public class MainActivity extends ActionBarActivity {
     public User user = null;
-    private File file = null;
     private EditText usuarioET, senhaET;
     private Dialog dialog;
 
@@ -31,11 +30,13 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        file = new File(getFilesDir(),"pesquisa.dat");
+        File file = new File(getFilesDir(),"pesquisa.dat");
+        Serealizar.setFile(file);
+
         usuarioET = (EditText) findViewById(R.id.emailET);
         senhaET = (EditText) findViewById(R.id.senhaET);
 
-        this.user = Serealizar.loadUser(file);
+        this.user = Serealizar.loadUser();
         if (user != null && user.getIslogin()) {
             Intent intent = new Intent(this, Listagem.class);
             startActivity(intent);
@@ -52,14 +53,14 @@ public class MainActivity extends ActionBarActivity {
 
 
     public void logar(View view) {
-        user = Serealizar.loadUser(file);
+        user = Serealizar.loadUser();
         if (user == null) {
             Toast.makeText(MainActivity.this, R.string.cadastrarprimeiro, Toast.LENGTH_SHORT).show();
         }else{
             User usuarioInformado = new User(usuarioET.getText().toString(),senhaET.getText().toString());
             if(user.getUsuario().equals(usuarioInformado.getUsuario()) && user.getSenha().equals(usuarioInformado.getSenha()) ){
                 user.setIslogin(true);
-                Serealizar.saveUser(user,file);
+                Serealizar.saveUser(user);
                 Intent intent = new Intent(this, Listagem.class);
                 startActivity(intent);
             }else{
@@ -84,10 +85,10 @@ public class MainActivity extends ActionBarActivity {
             EditText senhaCad = (EditText) dialog.findViewById(R.id.senhaCad);
 
             if(!isEmailValid(emailCad.getText())) {
-                emailCad.setError("Email Inválido");
+                emailCad.setError(getText(R.string.emailinvalido));
             }else{
                 User user = new User(emailCad.getText().toString(),senhaCad.getText().toString());
-                Serealizar.saveUser(user,file);
+                Serealizar.saveUser(user);
                 dialog.dismiss();
                 Toast.makeText(MainActivity.this, R.string.cadastradosucesso, Toast.LENGTH_SHORT).show();
             }
@@ -96,6 +97,14 @@ public class MainActivity extends ActionBarActivity {
 
     boolean isEmailValid(CharSequence email) {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
 }

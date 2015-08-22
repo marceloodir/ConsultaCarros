@@ -15,7 +15,9 @@ import java.io.ObjectOutputStream;
  */
 public  class Serealizar {
 
-    public static void saveUser(User user, File file) {
+    private static File file;
+
+    public static void saveUser(User user) {
         try {
             FileOutputStream fos = new FileOutputStream(file);
             ObjectOutputStream out = new ObjectOutputStream(fos);
@@ -27,7 +29,7 @@ public  class Serealizar {
         }
     }
 
-    public static User loadUser(File file) {
+    public static User loadUser() {
         User user = null;
         try {
             FileInputStream fis = new FileInputStream(file);
@@ -39,5 +41,17 @@ public  class Serealizar {
             e.printStackTrace();
         }
         return user;
+    }
+
+    public static void removeUser() {
+        file.delete();
+    }
+
+    public static File getFile() {
+        return file;
+    }
+
+    public static void setFile(File file) {
+        Serealizar.file = file;
     }
 }
