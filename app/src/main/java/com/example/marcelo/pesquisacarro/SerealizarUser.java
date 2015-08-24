@@ -22,7 +22,7 @@ public  class SerealizarUser {
             out.writeObject(user);
             out.close();
         }catch (Exception e){
-            Log.i("saveUser",e.toString());
+            Log.i("saveUser Error:",e.toString());
             e.printStackTrace();
         }
     }
@@ -35,7 +35,7 @@ public  class SerealizarUser {
             user = (User) in.readObject();
             in.close();
         }catch (Exception e){
-            Log.i("loadUser",e.toString());
+            Log.i("loadUser Error:",e.toString());
             e.printStackTrace();
         }
         return user;

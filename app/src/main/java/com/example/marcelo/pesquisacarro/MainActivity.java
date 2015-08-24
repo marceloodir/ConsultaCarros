@@ -55,6 +55,10 @@ public class MainActivity extends ActionBarActivity {
             if(user.getUsuario().equals(usuarioInformado.getUsuario()) && user.getSenha().equals(usuarioInformado.getSenha()) ){
                 user.setIslogin(true);
                 SerealizarUser.saveUser(user);
+
+                //Aqui deveria baixar a lista de veículos ArrayList<Veiculo> do usuário logado a partir do WS.
+                //Repassar essa lista a activity Listagem para renderização em tela.
+
                 Intent intent = new Intent(this, Listagem.class);
                 startActivity(intent);
             }else{
