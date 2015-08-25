@@ -46,10 +46,21 @@ public class Listagem extends ActionBarActivity {
 
 
     public void logout(MenuItem item) {
-        SerealizarUser.removeUser();
-        mydb.removeDB(this);
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.sair);
+        builder.setMessage(R.string.removeuser);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                SerealizarUser.removeUser();
+                mydb.removeDB(Listagem.this);
+                Intent intent = new Intent(Listagem.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        builder.setNegativeButton("Cancelar", null);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     public void sobre(MenuItem item) {

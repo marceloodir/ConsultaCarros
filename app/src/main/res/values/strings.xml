@@ -30,6 +30,7 @@
     <string name="nokcheck">X</string>
     <string name="apagarveiculo">Apagar Placa: </string>
     <string name="apagarmessagem">Deseja apagar esse veículo?</string>
+    <string name="removeuser">TODOS os dados serão apagados. Deseja realmente sair?</string>
     <string name="status">Status</string>
 
     <string name="hello_world">Hello world!</string>
