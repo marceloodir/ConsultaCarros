@@ -14,6 +14,12 @@ public class Veiculo {
         this.renavam = renavam;
     }
 
+    public Veiculo(String placa, String renavam, String status) {
+        this.placa = placa;
+        this.renavam = renavam;
+        this.status = status;
+    }
+
     public String getPlaca() {
         return placa;
     }

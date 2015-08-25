@@ -19,15 +19,18 @@ import java.util.ArrayList;
 public class Listagem extends ActionBarActivity {
     private User user = SerealizarUser.loadUser();
     private GridView grid = null;
-    private ArrayList<Veiculo> veiculos = new ArrayList<>();
+    private ArrayList<Veiculo> veiculos;
     private VeiculosAdapter adapter;
     private Dialog dialog;
+    private DBHelper mydb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listagem);
         grid = (GridView) findViewById(R.id.gridView);
+        mydb = new DBHelper(this);
+        veiculos = mydb.getAllVeiculos();
         adapter = new VeiculosAdapter(this,0,veiculos);
         grid.setAdapter(adapter);
     }
@@ -44,6 +47,7 @@ public class Listagem extends ActionBarActivity {
 
     public void logout(MenuItem item) {
         SerealizarUser.removeUser();
+        mydb.removeDB(this);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
@@ -80,6 +84,7 @@ public class Listagem extends ActionBarActivity {
             public void onClick(DialogInterface dialog, int which) {
                 for (Veiculo cada : veiculos) {
                     if (cada.getPlaca().equals(placa.getText().toString())) {
+                        mydb.deleteVeiculo(cada);
                         veiculos.remove(cada);
                         break;
                     }
@@ -106,14 +111,11 @@ public class Listagem extends ActionBarActivity {
             EditText placa = (EditText) dialog.findViewById(R.id.placaCad);
             EditText renavam = (EditText) dialog.findViewById(R.id.renavamCad);
             Veiculo veiculo = new Veiculo(placa.getText().toString(),renavam.getText().toString());
+            mydb.insertVeiculo(veiculo);
             veiculos.add(veiculo);
             adapter.notifyDataSetChanged();
             dialog.dismiss();
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }
