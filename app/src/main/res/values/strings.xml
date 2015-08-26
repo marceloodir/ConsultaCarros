@@ -32,6 +32,9 @@
     <string name="apagarmessagem">Deseja apagar esse veículo?</string>
     <string name="removeuser">TODOS os dados serão apagados. Deseja realmente sair?</string>
     <string name="status">Status</string>
+    <string name="errorcomunicacao">Ocorreu uma falha de comunicação com o servidor, tente mais tarde.</string>
+    <string name="atualizado">Veículos verificados com sucesso!</string>
+    <string name="atualizando">Verificando...</string>
 
     <string name="hello_world">Hello world!</string>
 </resources>

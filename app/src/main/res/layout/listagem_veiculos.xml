@@ -12,8 +12,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:width="110dp"
         android:gravity="center_horizontal"
-        android:layout_weight="1"
+        android:background="@color/highlighted_text_material_dark"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Placa"
         android:id="@+id/placaTV" />
@@ -21,8 +22,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:width="120dp"
         android:gravity="center_horizontal"
-        android:layout_weight="1"
+        android:background="@color/abc_search_url_text_normal"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Renavam"
         android:id="@+id/renavamTV" />
@@ -30,8 +32,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:width="140dp"
+        android:background="@color/dim_foreground_material_dark"
         android:gravity="center_horizontal"
-        android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/ncheck"
         android:id="@+id/checkTV" />

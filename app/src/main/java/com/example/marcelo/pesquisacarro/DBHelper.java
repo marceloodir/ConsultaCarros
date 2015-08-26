@@ -42,6 +42,11 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public void removeAllVeiculos() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL(String.format("DELETE FROM  %s",VEICULOS_TABLE_NAME));
+    }
+
     public void removeDB(Context context) {
         context.deleteDatabase(DATABASE_NAME);
     }

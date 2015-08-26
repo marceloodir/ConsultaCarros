@@ -63,7 +63,7 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }else{
                 Toast.makeText(MainActivity.this, R.string.usuariosenhaerrado, Toast.LENGTH_SHORT).show();
-            }
+        }
         }
     }
 
